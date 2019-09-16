@@ -6,20 +6,20 @@ import Formulario from './components/Formulario';
 class App extends Component{
 
 	state = {
-		noticias:{}
+		noticias: []
 	}
 
 	componentDidMount(){
 		this.consultarNoticias();
 	}
 
-	consultarNoticias = (categoria = 'general') => {
+	consultarNoticias = (categoria = "general") => {
 		
-		let url = `https://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apikey=`;
+		let url = `https://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=afead870dceb44bbbe1322da09629fd7`;
 		
 		fetch(url)
-			.then(respuesta => {
-				respuesta.json();
+			.then(response => {
+				return response.json();
 			})
 			.then(noticias => {
 				this.setState({

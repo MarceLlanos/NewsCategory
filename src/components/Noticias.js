@@ -10,14 +10,8 @@ class Noticias extends Component {
 			<div className = 'row'>
 				<TransitionGroup>
 					{this.props.noticias.map(noticia => (
-						<CSSTransition 
-							key = {noticia.url}
-							classNames = 'fade'
-							timeout = '500'
-						>
-							<Noticia
-								noticia = {noticia}
-							/>
+						<CSSTransition key = {noticia.url} classNames = 'fade' timeout = {500}>
+							<Noticia noticia = {noticia}/>
 						</CSSTransition>
 					))}
 				</TransitionGroup>

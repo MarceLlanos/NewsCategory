@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Noticias from './components/Noticias';
+import Formulario from './components/Formulario';
 
 class App extends Component{
 
@@ -32,6 +33,7 @@ class App extends Component{
 				<Header title = "Noticias"/>
 
 				<div className = "container white contenerdor-noticias">
+					<Formulario/>
 					<Noticias 
 						noticias = {this.state.noticias}
 					/>

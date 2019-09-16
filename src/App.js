@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import Noticias from './components/Noticias';
 
 class App extends Component{
 
@@ -21,8 +22,14 @@ class App extends Component{
   }
   render(){
     return (
-      <div className="App">
+      <div className="container-app">
         <Header title = "Noticias"/>
+
+        <div className = "container white contenerdor-noticias">
+          <Noticias 
+            noticias = {this.state.noticias}
+          />
+        </div>
       </div>
     );
   }

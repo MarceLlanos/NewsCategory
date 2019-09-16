@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Noticia = (noticia) => {
 	
 	const {urlToImage, title, description, source} = noticia.noticia;
+
   return ( 
     <div className = "col s12 m6 l4 ">
       <div className = "card">
@@ -20,6 +22,15 @@ const Noticia = (noticia) => {
 			</div>
     </div>
    );
+}
+
+Noticia,propTypes = {
+	noticia : PropTypes.shape({
+		urlToImage : PropTypes.string, 
+		title: PropTypes.string,
+		description: PropTypes.string,
+		source: PropTypes.object
+	})
 }
  
 export default Noticia;

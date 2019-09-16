@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Noticia from './Noticia';
 import PropTypes from 'prop-types';
-import {ReactTransitionGroup, CSSTransition, TransitionGroup} from 'react-transition-group';
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 class Noticias extends Component {
 

@@ -4,35 +4,41 @@ import Noticias from './components/Noticias';
 
 class App extends Component{
 
-  state = {
-    noticias:{}
-  }
+	state = {
+		noticias:{}
+	}
 
-  componentDidMount(){
-    this.consultarNoticias();
-  }
+	componentDidMount(){
+		this.consultarNoticias();
+	}
 
-  consultarNoticias = () => {
-    let url = "https://newsapi.org/v2/top-headlines?country=mx&category=business&apikey=";
-    fetch(url).then(respuesta => {
-      respuesta.json();
-    }).then(noticias => {
-      this.setState({noticias : noticias.articles});
-    })
-  }
-  render(){
-    return (
-      <div className="container-app">
-        <Header title = "Noticias"/>
+	consultarNoticias = () => {
+		let url = "https://newsapi.org/v2/top-headlines?country=mx&category=business&apikey=";
+		
+		fetch(url)
+			.then(respuesta => {
+				respuesta.json();
+			})
+			.then(noticias => {
+				this.setState({
+					noticias : noticias.articles
+				});
+			})
+	}
+	
+	render(){
+		return (
+			<div className="container-app">
+				<Header title = "Noticias"/>
 
-        <div className = "container white contenerdor-noticias">
-          <Noticias 
-            noticias = {this.state.noticias}
-          />
-        </div>
-      </div>
-    );
-  }
+				<div className = "container white contenerdor-noticias">
+					<Noticias 
+						noticias = {this.state.noticias}
+					/>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default App;

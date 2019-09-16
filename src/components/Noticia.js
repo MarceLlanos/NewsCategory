@@ -2,7 +2,7 @@ import React from 'react';
 
 const Noticia = (noticia) => {
 	
-	const {author, urlToImage, title, description, source} = noticia.noticia;
+	const {urlToImage, title, description, source} = noticia.noticia;
   return ( 
     <div className = "col s12 m6 l4 ">
       <div className = "card">
